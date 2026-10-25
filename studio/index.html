@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Snap Vanish — Preview Studio</title>
+    <link rel="stylesheet" href="studio.css" />
+    <script src="../injected/snap-engine.js"></script>
+    <script src="../content/content.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside>
+        <a class="logo" href="#"><span>✦</span> Snap Vanish</a>
+        <div class="workspace">WORKSPACE</div>
+        <div class="nav active">
+          ◉ <span>Preview studio</span><small>01</small>
+        </div>
+        <div class="nav">◈ <span>Local processing</span></div>
+        <div class="aside-bottom">
+          <span class="green-dot"></span> Your camera. Your device.
+          <p>No cloud processing.<br />No recordings. No uploads.</p>
+          <span class="build">SNAP VANISH / V2.0</span>
+        </div>
+      </aside>
+      <div class="main">
+        <header>
+          <div>
+            <span class="breadcrumb">WORKSPACE <i>/</i> PREVIEW STUDIO</span>
+            <h1>Make a disappearing act.</h1>
+            <p>A real camera. A little cinema. Entirely on your device.</p>
+          </div>
+          <span class="privacy-pill"
+            ><span class="green-dot"></span> LOCAL AI</span
+          >
+        </header>
+        <div class="stage-layout">
+          <section class="preview">
+            <div class="preview-toolbar">
+              <div>
+                <span class="live-dot" id="liveDot"></span
+                ><span id="stageLabel">YOUR CAMERA PREVIEW</span>
+              </div>
+              <span id="resolutionLabel">1920 × 1080 / 30</span>
+            </div>
+            <div class="viewport">
+              <video id="preview" autoplay muted playsinline></video>
+              <div id="empty">
+                <div class="empty-art">
+                  <span>✦</span><i></i><i></i><i></i><i></i>
+                </div>
+                <div class="eyebrow">YOUR NEXT GREAT EXIT</div>
+                <h2>Now you see me.</h2>
+                <p>
+                  Connect your camera to create<br />your own disappearing act.
+                </p>
+                <button id="start" class="primary">
+                  Connect camera <span>↗</span></button
+                ><small>Camera and microphone permission required</small>
+              </div>
+              <div id="countdown" hidden>
+                <span>STEP OUT OF FRAME</span><b>5</b
+                ><span>Capturing your empty room</span>
+              </div>
+              <span class="camera-label" id="cameraLabel" hidden
+                >YOU · MIRRORED PREVIEW</span
+              >
+            </div>
+            <div class="transport">
+              <div class="transport-state">
+                <span id="stateDot"></span>
+                <div>
+                  <strong id="state">Camera disconnected</strong
+                  ><span id="hint">Start here, then capture your room.</span>
+                </div>
+              </div>
+              <button id="stop" class="icon-button" disabled>Disconnect</button>
+            </div>
+          </section>
+          <section class="controls">
+            <div class="control-title">
+              <span>THE EFFECT</span><span class="tag">LIVE</span>
+            </div>
+            <h2>Exit, beautifully.</h2>
+            <p class="intro">
+              A snap of your fingers.<br />A thousand tiny goodbyes.
+            </p>
+            <button id="trigger" class="primary big" disabled>
+              ✦ <span>Vanish</span><kbd>Alt ⇧ S</kbd>
+            </button>
+            <div class="room-card">
+              <div class="room-title">
+                <span>01</span><strong>Your empty room</strong
+                ><span id="roomCheck">○</span>
+              </div>
+              <p>
+                Keep the camera still. Step out of view for five seconds so we
+                can capture the room behind you.
+              </p>
+              <button id="capture" class="secondary" disabled>
+                Capture room <span>↗</span>
+              </button>
+            </div>
+            <div class="setting">
+              <label for="duration"
+                >Dust duration <output id="durationValue">2.2 s</output></label
+              ><input
+                id="duration"
+                type="range"
+                min="800"
+                max="5000"
+                step="100"
+                value="2200"
+              />
+            </div>
+            <div class="setting">
+              <label for="sensitivity"
+                >Snap sensitivity
+                <output id="sensitivityValue">5 / 10</output></label
+              ><input
+                id="sensitivity"
+                type="range"
+                min="1"
+                max="10"
+                value="5"
+              />
+            </div>
+            <div class="setting">
+              <label>Wind direction</label>
+              <div class="directions" role="group" aria-label="Wind direction">
+                <button data-direction="left">←</button
+                ><button data-direction="right" aria-pressed="true">→</button
+                ><button data-direction="up">↑</button
+                ><button data-direction="vortex">↗</button>
+              </div>
+            </div>
+            <label class="enable-label"
+              ><span>Enable effect</span
+              ><input id="enabled" type="checkbox" checked
+            /></label>
+          </section>
+        </div>
+        <div class="metrics">
+          <div>
+            <span>OUTPUT CANVAS</span
+            ><strong id="outputSize"
+              >1920 × 1080<small>Full HD target</small></strong
+            >
+          </div>
+          <div>
+            <span>FRAME RATE</span
+            ><strong id="fps">—<small>frames / second</small></strong>
+          </div>
+          <div>
+            <span>PROCESSING</span
+            ><strong id="latency">—<small>ms / frame</small></strong>
+          </div>
+          <div>
+            <span>VISION ENGINE</span
+            ><strong id="delegate"
+              >Local AI<small>waiting for camera</small></strong
+            >
+          </div>
+        </div>
+        <div class="note" id="notice" role="status">
+          Start the camera, capture an empty room, then return and snap with
+          your hand clearly in view.
+        </div>
+        <footer>
+          <p>Built for browser video calls · Brave, Chrome & Edge</p>
+          <span
+            >Camera resolution and meeting quality depend on your hardware and
+            calling app.</span
+          >
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="studio.js"></script>
+  </body>
+</html>

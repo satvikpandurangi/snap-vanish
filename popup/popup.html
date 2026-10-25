@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Snap Vanish</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="mark">✦</span>
+        <div>Snap Vanish<small>MAKE AN EXIT.</small></div>
+      </div>
+      <span class="version">2.0</span>
+    </header>
+    <main>
+      <div class="hero">
+        <span class="eyebrow">A LITTLE MOVIE MAGIC</span>
+        <h1>Here.<br />Then nowhere.</h1>
+        <div class="grain" aria-hidden="true">✦</div>
+        <div class="local">● LOCAL AI · PRIVATE BY DESIGN</div>
+      </div>
+      <div class="activation">
+        <div>
+          <strong>Snap Vanish</strong>
+          <p>Enhance your browser camera</p>
+        </div>
+        <label class="switch"
+          ><input
+            id="enabled"
+            type="checkbox"
+            aria-label="Enable Snap Vanish" /><span></span
+        ></label>
+      </div>
+      <div class="status">
+        <span id="dot"></span>
+        <div>
+          <strong id="state">Checking camera…</strong
+          ><small id="detail">Open a browser video call to get started.</small>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="trigger" class="primary" disabled>
+          ✦ <span>Vanish</span></button
+        ><button id="capture" class="secondary" disabled>Capture room</button>
+      </div>
+      <p class="help" id="help">
+        Capture an empty room once. Step back in, then snap.
+      </p>
+      <section>
+        <div class="section-label">YOUR EFFECT <span>1080p OUTPUT</span></div>
+        <label class="slider-label" for="sensitivity"
+          >Snap sensitivity <output id="sensitivityValue">5 / 10</output></label
+        ><input type="range" id="sensitivity" min="1" max="10" value="5" />
+        <div class="range-labels">
+          <span>Deliberate</span><span>Responsive</span>
+        </div>
+        <label class="slider-label" for="duration"
+          >Dust duration <output id="durationValue">2.2 s</output></label
+        ><input
+          type="range"
+          id="duration"
+          min="800"
+          max="5000"
+          step="100"
+          value="2200"
+        />
+        <div class="slider-label">Wind direction</div>
+        <div class="directions" role="group" aria-label="Dust direction">
+          <button data-direction="left" aria-pressed="false">← Left</button
+          ><button data-direction="right" aria-pressed="true">Right →</button
+          ><button data-direction="up" aria-pressed="false">↑ Up</button
+          ><button data-direction="vortex" aria-pressed="false">
+            ↗ Scatter
+          </button>
+        </div>
+      </section>
+      <button id="studio" class="studio">
+        Open preview studio <span>↗</span>
+      </button>
+      <footer>
+        <span>Vanish / return</span><kbd>Alt</kbd><kbd>Shift</kbd><kbd>S</kbd>
+      </footer>
+      <p class="privacy">Video processing stays on this device.</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

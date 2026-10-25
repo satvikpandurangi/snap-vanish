@@ -1,0 +1,16 @@
+.work/
+node_modules/
+release/
+*.zip
+# Local editor configuration and extracted install copies
+.claude/
+.codex/
+.agents/
+snap-vanish/
+# Credentials, machine configuration and logs
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
